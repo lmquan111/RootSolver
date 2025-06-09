@@ -20,6 +20,11 @@ public class MyListPolynomial extends MyAbstractPolynomial {
     }
 
     @Override
+    public double[] coefficients() {
+        return coefficients.stream().mapToDouble(Double::doubleValue).toArray();
+    }
+
+    @Override
     public double coefficientAt(int index) {
         if (index < 0 || index >= coefficients.size()){
             return 0.0;
